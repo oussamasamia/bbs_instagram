@@ -1,21 +1,27 @@
-FROM php:8.1-fpm
+FROM php:8.1-apache
 
 # Set working directory
 WORKDIR /var/www/html
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential \
     libpng-dev \
-    libjpeg62-turbo-dev \
+    libjpeg-dev \
     libonig-dev \
     libxml2-dev \
     zip \
     curl \
-    unzip
+    unzip \
+    apache2 \
+    apache2-utils \
+    libapache2-mod-php8.1
+
+# Enable Apache mods
+RUN a2enmod rewrite
 
 # Install required extensions
-RUN docker-php-ext-install pdo pdo_mysql
+RUN docker-php-ext-install pdo pdo_mysql gd mbstring exif pcntl bcmath
+
 
 # Install Composer
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
@@ -45,5 +51,5 @@ RUN chown -R www-data:www-data /var/www
 RUN chmod -R 755 /var/www/*
 
 
-# Expose port 9000
-EXPOSE 9000
+# Expose port 80
+EXPOSE 80
