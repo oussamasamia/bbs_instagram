@@ -1,7 +1,10 @@
 <?php
 
+namespace App\Interfaces;
 
-interface PostInterface {
+interface PostInterface
+{
 
+    public function getInstagramPosts($limit = 25);
 
 }
