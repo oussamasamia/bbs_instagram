@@ -14,7 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('post_id')->unique();
             $table->string('media_type');
-            $table->string('media_url');
+            $table->text('media_url');
             $table->string('permalink');
             $table->timestamp('timestamp');
             $table->string('username');
