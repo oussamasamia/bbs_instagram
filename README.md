@@ -7,6 +7,19 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# Instagram Posts Project
+
+This project allows you to automatically fetch Instagram posts, store them in a database, and display them on a web page. By retrieving the posts from the database, you can avoid consuming your Instagram API credits and improve the overall performance of your application.
+
+
+## Usage
+
+### Fetching Instagram Posts
+
+The project includes a scheduled task that automatically fetches Instagram posts and stores them in the database every 6 hours. The task is defined in the `schedule` method of the `Kernel` class.
+
+To manually trigger the task, you can run the following command:
+php artisan service:posts-from-api
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
@@ -64,3 +77,9 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+
+
+
