@@ -12,14 +12,20 @@ class InstagramPostController extends Controller
 {
 
 
-
-
     public function getInstagramPosts(Request $request)
     {
 
         $instagramPostService = new InstagramPostService();
 
-        $instagramPostService->getPosts(1);
+        $posts = $instagramPostService->getPostsFromDB(25);
+
+
+        return view('welcome',
+            [
+                'posts' => $posts
+            ]
+        );
+
 
     }
 

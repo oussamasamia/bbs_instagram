@@ -14,8 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/get-access-token',[InstagramPostController::class, 'getInstagramPosts']);
+Route::get('/',[InstagramPostController::class, 'getInstagramPosts']);
