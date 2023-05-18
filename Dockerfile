@@ -45,6 +45,8 @@ RUN php artisan view:clear
 RUN php artisan optimize:clear
 RUN php artisan storage:link
 
+# Running The Scheduler Locally
+RUN php artisan schedule:work
 
 # Change ownership of our applications
 RUN chown -R www-data:www-data /var/www
