@@ -21,8 +21,7 @@ class InstagramPostService
 
     public function getPosts($limit = 25)
     {
-        $jsonData = $this->instagramPostRepository->getInstagramPosts($limit);
-        dd($jsonData);
+        $jsonData = $this->instagramPostRepository->getAndStoreInstagramPosts($limit);
 
     }
 

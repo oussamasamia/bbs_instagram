@@ -5,6 +5,6 @@ namespace App\Interfaces;
 interface PostInterface
 {
 
-    public function getInstagramPosts($limit = 25);
+    public function getAndStoreInstagramPosts($limit = 25);
 
 }
