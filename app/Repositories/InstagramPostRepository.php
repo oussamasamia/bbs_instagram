@@ -58,4 +58,11 @@ class InstagramPostRepository implements PostInterface
 
         return $jsonData;
     }
+
+
+    public function getPostsFromDB($limit = 25)
+    {
+        $posts = Post::with('images')->get();
+        return $posts;
+    }
 }
