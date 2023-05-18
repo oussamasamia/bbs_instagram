@@ -11,6 +11,7 @@ class Image extends Model
         'media_type',
         'media_url',
         'permalink',
+        'post_id'
     ];
 
     public function post()
